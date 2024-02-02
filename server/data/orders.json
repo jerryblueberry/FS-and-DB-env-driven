@@ -1,0 +1,26 @@
+[
+  {
+    "id": 989167,
+    "userId": 675168,
+    "products": [
+      {
+        "product": 3354726,
+        "quantity": 1,
+        "price": 129
+      }
+    ],
+    "total_price": 129
+  },
+  {
+    "id": 73067,
+    "userId": 675168,
+    "products": [
+      {
+        "product": 9980494,
+        "quantity": 1,
+        "price": 199
+      }
+    ],
+    "total_price": 199
+  }
+]
