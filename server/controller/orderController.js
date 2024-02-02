@@ -117,7 +117,6 @@ const orderProduct = asyncHandler(async (req, res) => {
           // Set the products array to an empty array
           userCart.products = [];
 
-          // Set total_price to 0 (optional, depending on your requirements)
           userCart.total_price = 0;
 
           // Save the updated user's cart
