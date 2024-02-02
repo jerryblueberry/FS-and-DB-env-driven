@@ -397,7 +397,7 @@ const updateCartTotal = async (userCart) => {
       return total + parseFloat(product.price) * cartProduct.quantity;
     }, 0);
 
-    // Assuming userCart is a Mongoose model instance, save the changes to the database
+   
     await userCart.save();
   } catch (error) {
     console.error('Error updating cart total:', error);
