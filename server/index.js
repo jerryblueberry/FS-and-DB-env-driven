@@ -19,6 +19,14 @@ app.use('/users',user);
 app.use('/products',product);
 app.use('/carts',cart);
 app.use('/orders',order);
+
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Internal Server Error' });
+});
+
+
 app.listen(PORT,() => {
     console.log(`Listening on Port ${PORT}`);
 

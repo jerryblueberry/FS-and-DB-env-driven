@@ -1,20 +1,16 @@
 [
   {
-    "id": 675168,
+    "id": 307967,
     "name": "Sajan Koirala",
     "email": "sajan12@gmail.com",
-    "password": "$2b$10$jWDpqvKejsevKRkC.U.Cte.Cwcm.y0hgBCpg7SvH8v/yGxwoJzA2S"
+    "password": "$2b$10$yDVHuL/vpewPXvclGLEhieCO0XZcbHM.z73J9OpevICGFU3khEOaO",
+    "role": "Admin"
   },
   {
-    "id": 297606,
+    "id": 983539,
     "name": "Sanam Koirala",
     "email": "sanam12@gmail.com",
-    "password": "$2b$10$6wqexzAVASG3KTvCJXjxje.96Gl/KvNWD2rB/Kp3BBvKbXjAEiTxm"
-  },
-  {
-    "id": 365287,
-    "name": "Raju Pandey",
-    "email": "raju12@gmail.com",
-    "password": "$2b$10$QK/qC3X2oDp2NrVkcKVMz.e9cyyIQfZhXpbahkGHxJq9ifyLZP5ES"
+    "password": "$2b$10$oOz4VFN1CQnYrnkG1WSje.wu1wrN/C6e3aK/1jLlhUM4LBHQ36rZi",
+    "role": "User"
   }
 ]

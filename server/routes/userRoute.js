@@ -1,11 +1,12 @@
 const express = require('express');
 const {signUpUser, signInUser, patchUser} = require('../controller/userController');
-
+const {verifyAuth} = require('../middleware/authentication');
 
 
 const router = express.Router();
 
-router.route('/signup').post(signUpUser)
-router.route('/login').post(signInUser);
-router.route('/update/:userId').patch(patchUser);
+
+router.post('/signup',signUpUser)
+router.post('/login',signInUser);
+router.patch('/update/:userId',verifyAuth,patchUser);
 module.exports = router;

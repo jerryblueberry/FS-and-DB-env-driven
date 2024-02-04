@@ -1,38 +1,20 @@
 [
   {
-    "id": 2171353,
-    "title": "Iphone X",
-    "price": 699,
-    "description": "Apple Iphone X 512 Gb storage ",
-    "quantity": 11,
-    "category": "Electronics",
-    "rating": 4
-  },
-  {
-    "id": 9980494,
-    "title": "Nike Blazer Mid 77",
-    "price": 199,
-    "description": "High Quality Nike Blazers Mid 77",
-    "quantity": 100,
-    "category": "Fashion",
-    "rating": 4
-  },
-  {
-    "id": 3354726,
-    "title": "Fantech Gaming Keyboard",
-    "price": 129,
-    "description": "Fantech Gaming Keyboard , height adjustable, custumization , mechanical Keyboard , RGB lighting ",
-    "quantity": 4,
-    "category": "Electronics",
-    "rating": 4
-  },
-  {
-    "id": 4546531,
-    "title": "Sparco Hoodie ",
+    "id": 6875653,
+    "title": "Sparco Hoodie Tokyo Drift Edition",
     "price": 79,
     "description": "Premium Quality Hoodie from Sparco. Tokyo Drift Edition ",
-    "quantity": 11,
+    "quantity": 21,
     "category": "Fashion",
     "rating": 4
+  },
+  {
+    "id": 8484335,
+    "title": "Smartphone X",
+    "price": 599,
+    "description": "High-performance smartphone with advanced features.",
+    "quantity": 100,
+    "category": "Electronics",
+    "rating": 5
   }
 ]

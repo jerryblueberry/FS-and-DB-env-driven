@@ -29,10 +29,11 @@ const writeUsersToFile = async (users) => {
   }
 };
 
-const createToken = (userId, userName) => {
+const createToken = (userId, userName, userRole) => {
   const payload = {
     userId: userId,
     userName: userName,
+    userRole: userRole,
   };
   const token = jwt.sign(payload, 'Q$r2K6W8n!jCW%Zk', { expiresIn: '1h' });
   return token;
@@ -41,9 +42,9 @@ const createToken = (userId, userName) => {
 // endpoint to signupUser (Create Account)
 const signUpUser = asyncHandler(async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password,role } = req.body;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password ||!role) {
       return res.status(401).json({ message: "All fields are required" });
     }
 
@@ -62,6 +63,7 @@ const signUpUser = asyncHandler(async (req, res) => {
         name,
         email,
         password: hashedPassword,
+        role
       };
 
       users.push(newUser);
@@ -77,6 +79,7 @@ const signUpUser = asyncHandler(async (req, res) => {
         name,
         email,
         password: hashedPassword,
+        role,
       });
 
       await newUser.save();
@@ -101,6 +104,7 @@ const signInUser = asyncHandler(async(req,res)=> {
         if(!email || !password){
             return res.status(400).json({message:"All Fields are required"});
         }
+        let token;
 
         if(storeTo === "FS"){
             const users   = await readUsersFromFile();
@@ -114,7 +118,7 @@ const signInUser = asyncHandler(async(req,res)=> {
         if(!passwordMatch){
             return res.status(401).json({message:"Password didnot matched"});
         }
-         token = createToken(users[index].id,users[index].name);
+         token = createToken(users[index].id,users[index].name,users[index].role);
 
         //  code for decoding username and id 
         // const decodedToken = jwt.verify(token,'Q$r2K6W8n!jCW%Zk');
@@ -132,7 +136,7 @@ const signInUser = asyncHandler(async(req,res)=> {
             if(!passwordMatch){
                 return res.status(401).json({message:"Invalid Password"});
             }
-             token = createToken(user._id,user.name);
+             token = createToken(user._id,user.name,user.role);
 
           
         }else{

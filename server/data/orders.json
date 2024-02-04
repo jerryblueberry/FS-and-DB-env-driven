@@ -1,26 +1,14 @@
 [
   {
-    "id": 989167,
-    "userId": 675168,
+    "id": 664119,
+    "userId": 983539,
     "products": [
       {
-        "product": 3354726,
-        "quantity": 1,
-        "price": 129
+        "product": 6875653,
+        "quantity": 2,
+        "price": 79
       }
     ],
-    "total_price": 129
-  },
-  {
-    "id": 73067,
-    "userId": 675168,
-    "products": [
-      {
-        "product": 9980494,
-        "quantity": 1,
-        "price": 199
-      }
-    ],
-    "total_price": 199
+    "total_price": 158
   }
 ]

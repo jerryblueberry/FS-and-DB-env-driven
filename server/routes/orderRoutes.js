@@ -1,11 +1,12 @@
 const express = require('express');
+const { verifyAuth,isAdmin } = require('../middleware/authentication');
 const { orderProduct, getOrders } = require('../controller/orderController');
- const router  = express.Router();
+const router  = express.Router();
 
 
 
- router.route('/').post(orderProduct);
- router.route('/:userId').get(getOrders);
+ router.post('/',verifyAuth,orderProduct);
+ router.get('/:userId',verifyAuth,getOrders);
 
 
  module.exports  = router;
