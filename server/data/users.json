@@ -12,5 +12,29 @@
     "email": "sanam12@gmail.com",
     "password": "$2b$10$oOz4VFN1CQnYrnkG1WSje.wu1wrN/C6e3aK/1jLlhUM4LBHQ36rZi",
     "role": "User"
+  },
+  {
+    "id": 694669,
+    "name": "Coffee Singh",
+    "email": "coffee12@gmail.com",
+    "password": "$2b$10$Zs45kZ8w8THN5oaDdIu7WupHPy4p49bSPHpRhmf1sraWCtoNjfXBi",
+    "role": "User",
+    "profileImage": "files\\users\\1707062741162-220590201-thumbs-up.png"
+  },
+  {
+    "id": 750036,
+    "name": "Rohan Maharjan",
+    "email": "rohan12@gmail.com",
+    "password": "$2b$10$i0VgJuluT7LIjto0UVSWxOUhDXm/xPZE.71GV99L9Al34Q2O0ahau",
+    "role": "User",
+    "profileImage": "files\\1707108872277-449438736-radio.png"
+  },
+  {
+    "id": 615085,
+    "name": "Ram Thapa",
+    "email": "ram12@gmail.com",
+    "password": "$2b$10$pPfg4xt7RRL4Im5svJzgzeuixumHxWgeYrs7S2OAkM49U98QxuePO",
+    "role": "User",
+    "profileImage": "files\\1707117979275-767488745-radio.png"
   }
 ]

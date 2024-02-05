@@ -92,45 +92,46 @@ const orderProduct = asyncHandler(async (req, res) => {
         res.status(200).json(order);
       }
     } else if (storeTo === 'DB') {
-      const { userId, products, total_price } = req.body;
+      const { userId } = req.body;
 
       // Validate input data
-      if (!userId || !products || !total_price) {
+      if (!userId) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
-      // Create a new purchase
-      const newOrder = new Order({
-        userId,
-        products,
-        total_price,
-      });
+      // Retrieve the user's cart from the database
+      const userCart = await Cart.findOne({ userId });
 
-      // Save the purchase to the database
-      const savedPurchase = await newOrder.save();
-
-      // Remove products from the user's cart and make it completely empty
-      try {
-        const userCart = await Cart.findOne({ userId });
-
-        if (userCart) {
-          // Set the products array to an empty array
-          userCart.products = [];
-
-          userCart.total_price = 0;
-
-          // Save the updated user's cart
-          await userCart.save();
-        } else {
-          return res.status(404).json({ error: "User's cart not found" });
-        }
-      } catch (error) {
-        console.error('Error updating user cart:', error);
-        return res.status(500).json({ error: 'Internal Server Error' });
+      if (!userCart) {
+        return res.status(404).json({ error: "User's cart not found" });
       }
 
-      // Respond with the saved purchase
-      res.status(201).json(savedPurchase);
+      // Check the total price threshold
+      if (userCart.total_price < 100) {
+        return res
+          .status(401)
+          .json({ message: 'Cart Total price must be above 100' });
+      }
+
+      // Create a new order
+      const newOrder = new Order({
+        userId,
+        products: userCart.products,
+        total_price: userCart.total_price,
+      });
+
+      // Save the order to the database
+      const savedOrder = await newOrder.save();
+
+      // Clear the user's cart
+      userCart.products = [];
+      userCart.total_price = 0;
+
+      // Save the updated user's cart
+      await userCart.save();
+
+      // Respond with the saved order
+      res.status(201).json(savedOrder);
     } else {
       return res.status(500).json({ error: 'Invalid Storage Configuration' });
     }
@@ -138,7 +139,6 @@ const orderProduct = asyncHandler(async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
 const getOrders = asyncHandler(async (req, res) => {
   try {
     if (storeTo === 'FS') {

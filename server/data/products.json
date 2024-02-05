@@ -16,5 +16,46 @@
     "quantity": 100,
     "category": "Electronics",
     "rating": 5
+  },
+  {
+    "id": 2154346,
+    "title": "Samsung Monitor",
+    "price": "1699",
+    "description": "Curved 55 inch OLED screen 4k resolution.Dolby atoms build in speakers",
+    "quantity": "21",
+    "category": "Electronics",
+    "rating": "4",
+    "image": [
+      "files\\1707108532745-27362673-close.png",
+      "files\\1707108532746-998264762-love.png"
+    ]
+  },
+  {
+    "id": 1711005,
+    "title": "Mens Casual Premium Slim Fit T-Shirts",
+    "price": "23",
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley p…",
+    "quantity": "41",
+    "category": "Fashion",
+    "rating": "4",
+    "image": [
+      "files\\1707121039386-689217174-heart.png",
+      "files\\1707121039387-333036655-dislike.png",
+      "files\\1707121039387-749194307-radio.png"
+    ]
+  },
+  {
+    "id": 8982642,
+    "title": "Basmati Rice (50Kg)",
+    "price": "253",
+    "description": "High Quality Basmati Rice from Nepal ",
+    "quantity": "1",
+    "category": "Grocery",
+    "rating": "4",
+    "image": [
+      "files\\1707121170380-12336973-heart.png",
+      "files\\1707121170380-273492347-dislike.png",
+      "files\\1707121170381-885220963-radio.png"
+    ]
   }
 ]

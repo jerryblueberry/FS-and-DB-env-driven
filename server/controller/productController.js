@@ -1,5 +1,7 @@
 const fs = require('fs').promises;
 const asyncHandler = require('express-async-handler');
+
+
 const path = require('path');
 require('dotenv').config();
 const Product = require('../models/productModel');
@@ -33,6 +35,7 @@ const addProducts = asyncHandler(async (req, res) => {
     if (!title || !description || !rating || !price || !category || !quantity) {
       return res.status(400).json({ message: 'All fields are required' });
     }
+    let imageFile = req.files? req.files.map(file => file.path):[];
 
     if (storeTo === 'FS') {
       const products = await readProductsFromFile();
@@ -47,6 +50,7 @@ const addProducts = asyncHandler(async (req, res) => {
         quantity,
         category,
         rating,
+        image:imageFile.length > 0 ? imageFile :null,
       };
       products.push(newProduct);
       await writeProductsToFile(products);
@@ -60,6 +64,7 @@ const addProducts = asyncHandler(async (req, res) => {
         category,
         price,
         quantity,
+        image:imageFile.length > 0 ? imageFile :null
       });
 
       const savedProduct = await newProduct.save();
