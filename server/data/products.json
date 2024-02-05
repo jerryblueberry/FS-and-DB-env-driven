@@ -13,7 +13,7 @@
     "title": "Smartphone X",
     "price": 599,
     "description": "High-performance smartphone with advanced features.",
-    "quantity": 100,
+    "quantity": 3,
     "category": "Electronics",
     "rating": 5
   },
@@ -56,6 +56,20 @@
       "files\\1707121170380-12336973-heart.png",
       "files\\1707121170380-273492347-dislike.png",
       "files\\1707121170381-885220963-radio.png"
+    ]
+  },
+  {
+    "id": 3969031,
+    "title": "Milk Power (500gm)",
+    "price": "53",
+    "description": "High Calcium milk powder.",
+    "quantity": "3",
+    "category": "Grocery",
+    "rating": "4",
+    "image": [
+      "files\\1707121628525-692552401-heart.png",
+      "files\\1707121628525-831138708-dislike.png",
+      "files\\1707121628526-254288810-radio.png"
     ]
   }
 ]

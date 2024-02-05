@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const asyncHandler = require('express-async-handler');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const multer  = require('multer');
+
 const jwt = require('jsonwebtoken');
 const saltRounds = 10;
 const User = require('../models/userModel'); // userSchema
@@ -15,18 +15,7 @@ const generateRandomId = () => Math.floor(Math.random() * 1000000);
 
 
 // Configure Multer for handling file uploads
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "files/"); // Specify the desired destination folder
-  },
-  filename: function (req, file, cb) {
-    // Generate a unique filename for the uploaded file
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, uniqueSuffix + "-" + file.originalname);
-  },
-});
 
-const upload = multer({ storage: storage });
 
 const readUsersFromFile = async () => {
   try {
